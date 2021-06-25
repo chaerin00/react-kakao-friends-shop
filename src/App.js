@@ -6,6 +6,7 @@ import New from "./pages/New";
 import My from "./pages/My";
 import Hot from "./pages/Hot";
 import Today from "./pages/Today";
+import Item from "./pages/ItemDetail";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 const Blank = styled.div`
@@ -27,6 +28,7 @@ function App() {
           <Route path="/my" component={My} />
           <Route path="/today" component={Today} />
           <Route path="/hot" component={Hot} />
+          <Route path="/item/:id" component={Item} />
         </Switch>
       </BrowserRouter>
     </>

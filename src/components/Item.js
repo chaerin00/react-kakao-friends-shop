@@ -4,6 +4,7 @@ import styled from "styled-components";
 const ItemWrap = styled.div`
   width: 27.5rem;
   height: 40.1rem;
+  cursor: pointer;
   .item__image {
     width: 27.5rem;
   }
@@ -20,8 +21,9 @@ const ItemWrap = styled.div`
 `;
 
 const Item = ({ item }) => {
+  const handleItemClick = () => {};
   return (
-    <ItemWrap>
+    <ItemWrap onClick={handleItemClick}>
       <img className="item__image" src={item.image} alt="" />
       <div className="item__name">{item.name}</div>
       <div className="item__price">{item.price}원</div>

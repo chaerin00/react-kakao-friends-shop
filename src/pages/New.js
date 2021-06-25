@@ -2,11 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import choonsik from "../assets/img/banner.jpg";
 import Item from "../components/Item";
+import ImageSlider from "../components/ImageSlider";
 
 const NewWrap = styled.div``;
-const ImageSlider = styled.img`
-  width: 64rem;
-`;
 const Items = styled.div`
   padding: 4.9rem 3.5rem;
   .title {
@@ -83,7 +81,7 @@ const New = () => {
   ];
   return (
     <NewWrap>
-      <ImageSlider src={choonsik}></ImageSlider>
+      <ImageSlider />
       <Items>
         <div className="title">
           <div className="title__sub">추천 신규 테마</div>
