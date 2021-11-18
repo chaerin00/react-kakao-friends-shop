@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import choonsik from "../assets/img/banner.jpg";
 import Item from "../components/Item";
 import ImageSlider from "../components/ImageSlider";
 
@@ -34,50 +33,50 @@ const New = () => {
       name: "초록방학 개구리 라이언 인형",
       price: 32000,
       image:
-        "https://t1.daumcdn.net/friends/prod/product/20210601174532087_8809721509166_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+        "https://t1.daumcdn.net/friends/prod/product/20210601174532087_8809721509166_AW_00.jpg?type=thumb&opt=R255x255@2xa",
     },
     {
       name: "초록방학 개구리 어피치 인형",
       price: 32000,
       image:
-        "https://t1.daumcdn.net/friends/prod/product/20210601174615656_8809721509173_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+        "https://t1.daumcdn.net/friends/prod/product/20210601174615656_8809721509173_AW_00.jpg?type=thumb&opt=R255x255@2xa",
     },
     {
       name: "초록방학 개구리 라이언 인형",
       price: 32000,
       image:
-        "https://t1.daumcdn.net/friends/prod/product/20210601174708372_8809721509180_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+        "https://t1.daumcdn.net/friends/prod/product/20210601174708372_8809721509180_AW_00.jpg?type=thumb&opt=R255x255@2xa",
     },
     {
       name: "초록방학 개구리 라이언 인형",
       price: 32000,
       image:
-        "https://t1.daumcdn.net/friends/prod/product/20210601174755126_8809721509197_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+        "https://t1.daumcdn.net/friends/prod/product/20210601174755126_8809721509197_AW_00.jpg?type=thumb&opt=R255x255@2xa",
     },
     {
       name: "초록방학 개구리 라이언 인형",
       price: 32000,
       image:
-        "https://t1.daumcdn.net/friends/prod/product/20210601174840973_8809721509203_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+        "https://t1.daumcdn.net/friends/prod/product/20210601174840973_8809721509203_AW_00.jpg?type=thumb&opt=R255x255@2xa",
     },
     {
       name: "초록방학 개구리 라이언 인형",
       price: 32000,
       image:
-        "https://t1.daumcdn.net/friends/prod/product/20210604175432746_8809721509562_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+        "https://t1.daumcdn.net/friends/prod/product/20210604175432746_8809721509562_AW_00.jpg?type=thumb&opt=R255x255@2xa",
     },
     {
       name: "초록방학 개구리 라이언 인형",
       price: 32000,
       image:
-        "https://t1.daumcdn.net/friends/prod/product/20210604175532878_8809721509579_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+        "https://t1.daumcdn.net/friends/prod/product/20210604175532878_8809721509579_AW_00.jpg?type=thumb&opt=R255x255@2xa",
     },
     {
       name: "초록방학 개구리 라이언 인형",
       price: 32000,
       image:
-        "https://t1.daumcdn.net/friends/prod/product/20210601183830960_8809721509388_AW_00.jpg?type=thumb&opt=R255x255@2xa"
-    }
+        "https://t1.daumcdn.net/friends/prod/product/20210601183830960_8809721509388_AW_00.jpg?type=thumb&opt=R255x255@2xa",
+    },
   ];
   return (
     <NewWrap>
@@ -88,7 +87,7 @@ const New = () => {
           <div className="title__main">초록방학</div>
         </div>
         <ItemsWrap>
-          {items.map((item) => (
+          {items.map(item => (
             <Item item={item} />
           ))}
         </ItemsWrap>

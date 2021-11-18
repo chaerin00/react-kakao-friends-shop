@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import styled from "styled-components";
 
 const LeftArrowWrap = styled.div`
@@ -7,8 +7,7 @@ const LeftArrowWrap = styled.div`
   left: 30vw;
   width: 2.5rem;
   height: 3.5rem;
-  background: url("https://t1.kakaocdn.net/friends/new_store/2.0/pc/arrow-left.png")
-    center center / 16px no-repeat;
+  background: url("https://t1.kakaocdn.net/friends/new_store/2.0/pc/arrow-left.png") center center / 16px no-repeat;
   z-index: 10;
   cursor: pointer;
 `;
@@ -21,8 +20,7 @@ const RightArrowWrap = styled.div`
   right: 30vw;
   width: 2.5rem;
   height: 3.5rem;
-  background: url("https://t1.kakaocdn.net/friends/new_store/2.0/pc/arrow-right.png")
-    center center / 16px no-repeat;
+  background: url("https://t1.kakaocdn.net/friends/new_store/2.0/pc/arrow-right.png") center center / 16px no-repeat;
   z-index: 10;
   cursor: pointer;
 `;
@@ -44,7 +42,7 @@ const SliderItem = styled.div`
   .slider__img {
     width: 64rem;
     height: 36rem;
-    background: url(${(props) => props.bg}) no-repeat top center;
+    background: url(${props => props.bg}) no-repeat top center;
     object-fit: cover;
   }
   .slider__title {
@@ -84,26 +82,16 @@ const ImageSlider = () => {
     "https://t1.kakaocdn.net/friends/prod/main_tab/banner/banner_20210604113152_mobile_kr.jpg?type=thumb&opt=R375x211@2xa",
     "https://t1.kakaocdn.net/friends/prod/main_tab/banner/banner_20210524120219_mobile_kr.jpg?type=thumb&opt=R375x211@2xa",
     "https://t1.kakaocdn.net/friends/prod/main_tab/banner/banner_20210222160504_mobile_kr.jpg?type=thumb&opt=R375x211@2xa",
-    "https://t1.kakaocdn.net/friends/prod/main_tab/banner/banner_20210208100213_mobile_kr.jpg?type=thumb&opt=R375x211@2xa"
+    "https://t1.kakaocdn.net/friends/prod/main_tab/banner/banner_20210208100213_mobile_kr.jpg?type=thumb&opt=R375x211@2xa",
   ];
-  useEffect(() => {
-    slideRef.current.style.transition = "all 0.5s ease-in-out";
-    //이미지 크기만큼 x축으로 이동
-    slideRef.current.style.transform = `translateX(-${currentSlide * 100}%)`;
-    setTimeout(handleNext, 2000);
-  }, [currentSlide]);
 
-  //   useEffect(() => {
-  //     setTimeout(handleNext, 2000);
-  //   }, [currentSlide]);
-
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     if (currentSlide === 9) {
       setCurrentSlide(0);
     } else {
       setCurrentSlide(currentSlide + 1);
     }
-  };
+  }, [currentSlide]);
 
   const handlePrev = () => {
     if (currentSlide === 0) {
@@ -112,6 +100,13 @@ const ImageSlider = () => {
       setCurrentSlide(currentSlide - 1);
     }
   };
+
+  useEffect(() => {
+    slideRef.current.style.transition = "all 0.5s ease-in-out";
+    //이미지 크기만큼 x축으로 이동
+    slideRef.current.style.transform = `translateX(-${currentSlide * 100}%)`;
+    setTimeout(handleNext, 2000);
+  }, [currentSlide, handleNext]);
 
   return (
     <ImageSliderDiv>
