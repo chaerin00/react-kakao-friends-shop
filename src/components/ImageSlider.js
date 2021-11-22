@@ -112,7 +112,6 @@ const ImageSlider = () => {
     <ImageSliderDiv>
       <Container>
         <LeftArrow handleBtnClick={handlePrev} />
-        <p id="page">{currentSlide}</p>
         <ImageSliderWrap ref={slideRef}>
           {images.map((img, idx) => (
             <SliderItem bg={img} key={idx}>
