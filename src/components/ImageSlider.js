@@ -113,9 +113,9 @@ const ImageSlider = () => {
       <Container>
         <LeftArrow handleBtnClick={handlePrev} />
         <ImageSliderWrap ref={slideRef}>
-          {images.map((img, key) => (
-            <SliderItem bg={img}>
-              <div className="slider__img" alt={key}></div>
+          {images.map((img, idx) => (
+            <SliderItem bg={img} key={idx}>
+              <div className="slider__img" alt={idx}></div>
             </SliderItem>
           ))}
         </ImageSliderWrap>
