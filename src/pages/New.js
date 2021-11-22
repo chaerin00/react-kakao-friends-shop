@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Item from "../components/Item";
 import ImageSlider from "../components/ImageSlider";
+import Counter from "../components/Counter";
 
 const NewWrap = styled.div``;
 const Items = styled.div`
@@ -80,6 +81,7 @@ const New = () => {
   ];
   return (
     <NewWrap>
+      <Counter />
       <ImageSlider />
       <Items>
         <div className="title">
